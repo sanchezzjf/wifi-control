@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <title>Box xGuard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        async function connectToNetwork(ssid) {
+            const passwd = prompt(`Enter password for ${ssid}:`);
+            if (ssid === '<%= currentConnection %>' ){
+                alert(`Already connected to ${ssid}`)
+                return
+            } 
+            if(passwd !== null){
+                try {
+                  const response = await fetch('/connect', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ ssid, passwd }),
+                  });
+                  const data = await response.json();
+                  if (response.ok) {
+                    alert(data.message);
+                  } else {
+                    alert(`Error: ${data.error}`);
+                  }
+                } catch (error) {
+                  console.error('Error:', error);
+                  alert('Error connecting to network.');
+                }
+            }
+        }
+        </script>
+</head>
+

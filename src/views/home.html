@@ -1,0 +1,33 @@
+<%- include('header.html') -%>
+<body>
+    <div class="letf-side">
+        <div class="logo-container">
+            <img src="/images/company_logo.png" alt="Company Logo" class="logo">
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="title-container">
+            <h1>Redes</h1>
+            <h3>Conectado a <%= currentConnection %></h3>
+            <h4>IP Wifi: <%= Object.values(wifiAddress) %></h4>
+        </div>
+        <div class="container">
+            <ul>
+                <% wifi_nets.forEach((net, index) => {
+                    %>
+                    <% if(net.ssid === currentConnection){ %>
+                        <li id="connected" class="networks" onclick="connectToNetwork('<%= net.ssid %>')">
+                            <span><strong><%= net.ssid %></strong></span>
+                            <span class="wifi-icon wifi"></span>
+                        </li>  
+                    <% } else { %>
+                    <li class="networks" onclick="connectToNetwork('<%= net.ssid %>')">
+                        <span><strong><%= net.ssid %></strong></span>
+                        <span class="wifi-icon wifi"></span>
+                    </li>
+                    <% } %>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>

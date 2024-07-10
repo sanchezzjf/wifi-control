@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    max-width: 43%;
+    max-height: 43%;
+}
+
+.right-side {
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+h1, h3, h4 {
+    color: #333;
+    margin: 0;
+}
+
+h1 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+/* h4 {
+    margin-top: 10px;
+} */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li#connected {
+    border: 1px solid rgb(252, 145, 22);
+    background-color: rgb(248, 233, 221);
+}
+
+li.networks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+li.networks:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+li.networks:active {
+    background-color: #ddd;
+    border-color: #888;
+}
+
+.wifi-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.wifi { background-image: url('/images/wifi.svg'); }
